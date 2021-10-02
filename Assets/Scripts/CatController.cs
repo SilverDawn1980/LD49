@@ -19,6 +19,7 @@ public class CatController : MonoBehaviour
     /// Each signal defined triggers a specific action the cat will be when colliding with a trigger, tagged with
     /// the corresponding Tag
     private static readonly String jumpSignal = "CatJump";
+    private static readonly String killSignal = "CatGoal";
 
     private void Awake()
     {
@@ -50,6 +51,9 @@ public class CatController : MonoBehaviour
                 float diffy = target.y - transform.position.y;
                 _rigidbody2D.AddForce(new Vector2(0f,Mathf.Sqrt(-2.0f * Physics2D.gravity.y * (diffy + 1))),ForceMode2D.Impulse);
             }
+        }else if (other.CompareTag(killSignal))
+        {
+            Destroy(gameObject);
         }
     }
 
