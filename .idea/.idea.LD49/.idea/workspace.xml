@@ -19,19 +19,23 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Manuel/Scripts/FragileObject.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Manuel/Scripts/StationaryDestroyableObjects.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Manuel/Scripts/FragileObjectController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Manuel/Scripts/StationaryDestroyableObjectController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Manuel/Scripts/ObjectPart.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Manuel/Scripts/Props.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Manuel/Scripts/PropController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Manuel/Scripts/Destroyable.cs" />
-      <option value="$PROJECT_DIR$/Assets/Manuel/Scripts/IDestroyable.cs" />
       <option value="$PROJECT_DIR$/Assets/Manuel/Scripts/ObjectPart.cs" />
       <option value="$PROJECT_DIR$/Assets/Manuel/Scripts/Props.cs" />
       <option value="$PROJECT_DIR$/Assets/Manuel/Scripts/FragileObject.cs" />
       <option value="$PROJECT_DIR$/Assets/Manuel/Scripts/StationaryDestroyableObjects.cs" />
+      <option value="$PROJECT_DIR$/Assets/Manuel/Scripts/PropController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Manuel/Scripts/StationaryDestroyableObjectController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Manuel/Scripts/DestroyablePathObjectController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Manuel/Scripts/FragileObjectController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Manuel/Scripts/IDestroyable.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ywgRB6ZeGcDur7yjsU76hj0R9K" />
@@ -80,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1633168058124</updated>
-      <workItem from="1633168085746" duration="6949000" />
+      <workItem from="1633168085746" duration="15222000" />
     </task>
     <servers />
   </component>
