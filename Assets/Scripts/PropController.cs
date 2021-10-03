@@ -41,7 +41,7 @@ public class PropController : MonoBehaviour, IDestroyable
     /// <param name="other"></param>
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (!_isDestroyed)
+        if (!_isDestroyed && other.gameObject.CompareTag("Cat"))
         {
             AddDamage(0);
         }

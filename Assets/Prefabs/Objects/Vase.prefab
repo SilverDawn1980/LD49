@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 2388106411824781815}
   - component: {fileID: 2388106411824781814}
   - component: {fileID: 2388106411824781812}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
