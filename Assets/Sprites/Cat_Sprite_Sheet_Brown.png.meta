@@ -16,16 +16,16 @@ TextureImporter:
     second: Cat_Idle_3
   - first:
       213: -7756317924843666776
-    second: Cat_Sprite_Sheet_Brown_4
+    second: Cat_Idle_4
   - first:
       213: -2773746562225469314
-    second: Cat_Sprite_Sheet_Brown_5
+    second: Cat_Idle_5
   - first:
       213: -3059093477087770031
-    second: Cat_Sprite_Sheet_Brown_6
+    second: Cat_Idle_6
   - first:
       213: 1384396586523845914
-    second: Cat_Sprite_Sheet_Brown_7
+    second: Cat_Idle_7
   - first:
       213: 4045464117307474550
     second: Cat_Sprite_Sheet_Brown_8
@@ -133,13 +133,13 @@ TextureImporter:
     second: Cat_Sprite_Sheet_Brown_42
   - first:
       213: -8245914290849608069
-    second: Cat_Sprite_Sheet_Brown_43
+    second: Cat_Jump_0
   - first:
       213: 8259157857086970098
-    second: Cat_Sprite_Sheet_Brown_44
+    second: Cat_Jump_1
   - first:
       213: 1934606002046627742
-    second: Cat_Sprite_Sheet_Brown_45
+    second: Cat_Fall
   - first:
       213: -204773012060545826
     second: Cat_Sprite_Sheet_Brown_46
@@ -370,7 +370,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat_Sprite_Sheet_Brown_4
+      name: Cat_Idle_4
       rect:
         serializedVersion: 2
         x: 1
@@ -391,7 +391,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat_Sprite_Sheet_Brown_5
+      name: Cat_Idle_5
       rect:
         serializedVersion: 2
         x: 33
@@ -412,7 +412,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat_Sprite_Sheet_Brown_6
+      name: Cat_Idle_6
       rect:
         serializedVersion: 2
         x: 65
@@ -433,7 +433,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat_Sprite_Sheet_Brown_7
+      name: Cat_Idle_7
       rect:
         serializedVersion: 2
         x: 97
@@ -1189,7 +1189,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat_Sprite_Sheet_Brown_43
+      name: Cat_Jump_0
       rect:
         serializedVersion: 2
         x: 33
@@ -1210,7 +1210,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat_Sprite_Sheet_Brown_44
+      name: Cat_Jump_1
       rect:
         serializedVersion: 2
         x: 65
@@ -1231,7 +1231,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat_Sprite_Sheet_Brown_45
+      name: Cat_Fall
       rect:
         serializedVersion: 2
         x: 97

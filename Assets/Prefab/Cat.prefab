@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6469040906587815713}
   m_Layer: 0
   m_Name: Cat
-  m_TagString: Untagged
+  m_TagString: Cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,7 +125,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &6469040906587815718
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -166,3 +166,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   jumpForce: 8
+  naptimer: 0
+  maxNaptimer: 0
+  is_waiting: 0

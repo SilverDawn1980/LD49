@@ -10,10 +10,14 @@ public class CatController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
-
+    [SerializeField] private float naptimer;
+    [SerializeField] private float maxNaptimer;
+    
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
     private static readonly int IsWalking = Animator.StringToHash("is_walking");
+    private static readonly int IsJumping = Animator.StringToHash("is_jumping");
+    private static readonly int IsFalling = Animator.StringToHash("is_falling");
     
     /// Control Signals
     /// Each signal defined triggers a specific action the cat will be when colliding with a trigger, tagged with
@@ -21,11 +25,21 @@ public class CatController : MonoBehaviour
     private static readonly String jumpSignal = "CatJump";
     private static readonly String killSignal = "CatGoal";
 
+    [SerializeField]private bool is_waiting;
+
+    public void setCatStats(float movespeed, float jumpforce, float napTimer)
+    {
+        this.moveSpeed = movespeed;
+        this.jumpForce = jumpforce;
+        this.maxNaptimer = napTimer;
+    }
+    
     private void Awake()
     {
         _animator = GetComponent<Animator>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator.SetBool(IsWalking,true);
+        naptimer = Random.Range(1, maxNaptimer);
     }
 
     // Start is called before the first frame update
@@ -37,7 +51,58 @@ public class CatController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         transform.position += new Vector3(moveSpeed, 0f, 0f) * Time.deltaTime;
+        if (is_waiting)
+        {
+            _animator.SetBool(IsWalking,false);
+            _animator.SetBool(IsJumping,false);
+            _animator.SetBool(IsFalling,false);
+        }
+        else
+        {
+            _animator.SetBool(IsWalking,true);
+            _animator.SetBool(IsJumping,false);
+            _animator.SetBool(IsFalling,false);
+        }
+        if (_rigidbody2D.velocity.y > 0.2)
+        {
+            _animator.SetBool(IsWalking,false);
+            _animator.SetBool(IsJumping,true);
+            _animator.SetBool(IsFalling,false);
+        }
+        else if (_rigidbody2D.velocity.y < -0.2)
+        {
+            _animator.SetBool(IsWalking,false);
+            _animator.SetBool(IsJumping,false);
+            _animator.SetBool(IsFalling,true);
+        }
+        
+        if (!is_waiting || _animator.GetBool(IsJumping) || _animator.GetBool(IsFalling))
+        {
+            transform.position += new Vector3(moveSpeed, 0f, 0f) * Time.deltaTime;
+            naptimer -= Time.deltaTime;
+        }
+
+        if (naptimer <= 0)
+        {
+            is_waiting = true;
+            StartCoroutine(waitforX(3));
+        }
+    }
+
+    IEnumerator waitforX(float x)
+    {
+        yield return new WaitForSeconds(x);
+        is_waiting = false;
+        naptimer = maxNaptimer;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        // Needed to ignore other Cats
+        if (other.gameObject.CompareTag("Cat"))
+        {
+            Physics2D.IgnoreCollision(other.gameObject.GetComponent<Collider2D>(),GetComponent<Collider2D>());
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -49,7 +114,15 @@ public class CatController : MonoBehaviour
             if (target != Vector3.zero)
             {
                 float diffy = target.y - transform.position.y;
-                _rigidbody2D.AddForce(new Vector2(0f,Mathf.Sqrt(-2.0f * Physics2D.gravity.y * (diffy + 1))),ForceMode2D.Impulse);
+                float forceNeeded = Mathf.Sqrt(-2.0f * Physics2D.gravity.y * (diffy + 1));
+                if (this.jumpForce >= forceNeeded)
+                {
+                    _rigidbody2D.AddForce(new Vector2(0f,forceNeeded),ForceMode2D.Impulse);
+                }
+                else
+                {
+                    _rigidbody2D.AddForce(new Vector2(0f,jumpForce),ForceMode2D.Impulse);
+                }
             }
         }else if (other.CompareTag(killSignal))
         {
@@ -67,12 +140,10 @@ public class CatController : MonoBehaviour
     {
         if (navigation == null)
         {
-            Debug.Log("No Targets");
             return Vector3.zero;
         }
         GameObject[] navigationTargets = navigation.GetTargets();
         int[] chances = navigation.GetChance();
-        Debug.Log(chances.Length);
         if (chances.Length > 1)
         {
             int roll = Random.Range(0,chances[chances.Length - 1]);
@@ -82,10 +153,8 @@ public class CatController : MonoBehaviour
                 {
                     if (navigationTargets[i] == null)
                     {
-                        Debug.Log("Dont wanna jump !");
                         return Vector3.zero;
                     }
-                    Debug.Log(navigationTargets[i].transform.position);
                     return navigationTargets[i].transform.position;
                 }
             }
@@ -94,13 +163,11 @@ public class CatController : MonoBehaviour
         {
             if (navigationTargets[0] == null)
             {
-                Debug.Log("Dont wanna jump !");
                 return Vector3.zero;
             }
-            Debug.Log(navigationTargets[0].transform.position);
             return navigationTargets[0].transform.position;
         }
-        Debug.Log("Nope");
+        Debug.Log("Error in Navigation - Setting target Vector to Zero (This should never happen)");
         return Vector3.zero;
     }
 }

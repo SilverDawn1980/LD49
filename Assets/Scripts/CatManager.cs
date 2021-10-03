@@ -11,16 +11,18 @@ public class CatManager : MonoBehaviour
     [SerializeField] private GameObject startingPoint;
     [SerializeField] private List<GameObject> activeCats;
 
-    [SerializeField] private GameObject catPrefab;
-
     [SerializeField] private int numCats;
+
+    private CatFactory connectedFactory;
     
     private void Awake()
     {
+        connectedFactory = GetComponent<CatFactory>();
         startingPoint = GameObject.FindGameObjectWithTag(StartTag);
         StartCoroutine("spawnCats");
     }
 
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +40,7 @@ public class CatManager : MonoBehaviour
         while (numCats > 0)
         {
             yield return new WaitForSeconds(Random.Range(0, 5f));
-            GameObject nextCat = GameObject.Instantiate(catPrefab, startingPoint.transform.position, Quaternion.identity);
+            GameObject nextCat = connectedFactory.getRandomCat();
             activeCats.Add(nextCat);
             numCats--;
         }
