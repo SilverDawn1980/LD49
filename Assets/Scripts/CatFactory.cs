@@ -34,27 +34,27 @@ public class CatFactory : MonoBehaviour
     public GameObject getCat(CatTypes catType)
     {
         GameObject newCatOnTheBlock = GameObject.Instantiate(catPrefab,transform.position,Quaternion.identity);
-        gameObject.GetComponent<CatController>().catType = catType;
+        newCatOnTheBlock.GetComponent<CatController>().catType = catType;
         randomCatColor(newCatOnTheBlock);
         switch (catType)
         {
             case CatTypes.Bonechonk:
-                newCatOnTheBlock.GetComponent<CatController>().setCatStats(3,5,2);
+                newCatOnTheBlock.GetComponent<CatController>().setCatStats(3,7,2);
                 break;
             case CatTypes.Chonkzero:
-                newCatOnTheBlock.GetComponent<CatController>().setCatStats(4,5,3);
+                newCatOnTheBlock.GetComponent<CatController>().setCatStats(4,9,3);
                 break;
             case CatTypes.Leanandmean:
-                newCatOnTheBlock.GetComponent<CatController>().setCatStats(5,7,3);
+                newCatOnTheBlock.GetComponent<CatController>().setCatStats(5,11,3);
                 break;
             case CatTypes.Fineboi:
-                newCatOnTheBlock.GetComponent<CatController>().setCatStats(5,8,4);
+                newCatOnTheBlock.GetComponent<CatController>().setCatStats(5,10,4);
                 break;
             case CatTypes.Chonker:
-                newCatOnTheBlock.GetComponent<CatController>().setCatStats(3,4,4);
+                newCatOnTheBlock.GetComponent<CatController>().setCatStats(3,6,4);
                 break;
             case CatTypes.Heftychonk:
-                newCatOnTheBlock.GetComponent<CatController>().setCatStats(2,2,3);
+                newCatOnTheBlock.GetComponent<CatController>().setCatStats(2,3,3);
                 break;
             case CatTypes.Ohlawdhecomin:
                 newCatOnTheBlock.GetComponent<CatController>().setCatStats(1,1,2);
