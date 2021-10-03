@@ -34,6 +34,7 @@ public class CatFactory : MonoBehaviour
     public GameObject getCat(CatTypes catType)
     {
         GameObject newCatOnTheBlock = GameObject.Instantiate(catPrefab,transform.position,Quaternion.identity);
+        gameObject.GetComponent<CatController>().catType = catType;
         randomCatColor(newCatOnTheBlock);
         switch (catType)
         {

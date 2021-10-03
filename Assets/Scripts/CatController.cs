@@ -12,6 +12,8 @@ public class CatController : MonoBehaviour
     [SerializeField] private float jumpForce;
     [SerializeField] private float naptimer;
     [SerializeField] private float maxNaptimer;
+
+    public CatTypes catType;
     
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
