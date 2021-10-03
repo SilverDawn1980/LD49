@@ -12,9 +12,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - DestroyedObject
   - Water
   - UI
+  - DestroyableObject
+  - NonDestroyableObject
   - 
   - 
   - 
@@ -22,9 +24,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Cats
   - 
   - 
   - 
