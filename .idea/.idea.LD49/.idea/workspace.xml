@@ -18,6 +18,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Manuel/Scripts/Destroyable.cs" />
@@ -33,6 +36,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/StationaryDestroyableObjectController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FragileObjectController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CatFactory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ywgRB6ZeGcDur7yjsU76hj0R9K" />
