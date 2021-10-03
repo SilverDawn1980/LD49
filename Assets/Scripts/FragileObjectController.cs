@@ -1,6 +1,7 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class FragileObjectController : MonoBehaviour, IDestroyable
 {
     [SerializeField] private int stability = 10;
@@ -30,7 +31,6 @@ public class FragileObjectController : MonoBehaviour, IDestroyable
     /// </summary>
     public void DestroyObject()
     {
-        Destroy(GetComponent<Rigidbody2D>());
         foreach (Transform tempChild in transform)
         {
             

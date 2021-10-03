@@ -1,8 +1,10 @@
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider2D))]
 public class StationaryDestroyableObjectController : MonoBehaviour, IDestroyable
 {
     [SerializeField] private int stability = 10;
+    [SerializeField] private Sprite destroyedVariant;
     
     private bool _isDestroyed;
 
@@ -24,7 +26,7 @@ public class StationaryDestroyableObjectController : MonoBehaviour, IDestroyable
     public void DestroyObject()
     {
         //Temporary, later change Animation to destroyed Variant
-        GetComponent<SpriteRenderer>().color = Color.red;
+        GetComponent<SpriteRenderer>().sprite = destroyedVariant;
     }
     
 

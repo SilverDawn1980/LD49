@@ -8,6 +8,9 @@ TextureImporter:
   - first:
       213: 1293272199433356700
     second: Wall_Shelf_1
+  - first:
+      213: -967495756025351744
+    second: Wall_Shelf_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -105,7 +108,7 @@ TextureImporter:
         width: 64
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -123,7 +126,28 @@ TextureImporter:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 64
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c950d1d9630a2f110800000000000000
+      internalID: 1293272199433356700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_Shelf_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -132,8 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c950d1d9630a2f110800000000000000
-      internalID: 1293272199433356700
+      spriteID: 0c139646cb3c292f0800000000000000
+      internalID: -967495756025351744
       vertices: []
       indices: 
       edges: []
