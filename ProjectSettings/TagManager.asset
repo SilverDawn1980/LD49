@@ -3,14 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Cat
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - DestroyedObject
   - Water
   - UI
+  - DestroyableObject
+  - NonDestroyableObject
   - 
   - 
   - 
@@ -18,9 +21,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Cats
   - 
   - 
   - 
@@ -40,13 +41,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 2131812971
-    locked: 0
-  - name: furniture Back
-    uniqueID: 1916429239
-    locked: 0
-  - name: furniture Front
-    uniqueID: 106930329
     locked: 0
